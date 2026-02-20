@@ -11,4 +11,7 @@ public class eArma {
     public tipoDaño getTipoDaño() {
         return this.tipoDaño;
     }
+    public int damage() {
+        return this.dañoBase;
+    }
 }

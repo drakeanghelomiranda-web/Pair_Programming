@@ -8,6 +8,8 @@ public class pMago {
     private int puntosVida = 100;
     private int mana;
 
+    private Object[] status;
+
     private eArmadura armaduraEquipada;
     private eArma armaEquipada;
 
@@ -33,6 +35,7 @@ public class pMago {
     public eArma getArmaEquipada() {
         return armaEquipada;
     }
+
     // Dentro de cada clase
     public void equiparArma(eArma arma) {
         if (arma != null) {

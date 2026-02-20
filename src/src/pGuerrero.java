@@ -8,6 +8,8 @@ public class pGuerrero {
     private int puntosVida = 100;
     private int energia;
 
+    private Object[] status;
+
     private eArmadura armaduraEquipada;
     private eArma armaEquipada;
 
@@ -34,6 +36,7 @@ public class pGuerrero {
     public eArma getArmaEquipada() {
         return armaEquipada;
     }
+
     // Dentro de cada clase
     public void equiparArma(eArma arma) {
         if (arma != null) {
@@ -49,5 +52,13 @@ public class pGuerrero {
         } else {
             System.out.println(nombre + " no puede equipar una armadura nula.");
         }
+    }
+
+    public void atacar(pGuerrero oponente){
+        int fuerza = (int)(Math.random() * 6);
+        if (fuerza == 6){ //Daño critico
+            fuerza = 10;
+        }
+        int danyo = this.armaEquipada.damage() + fuerza;
     }
 }

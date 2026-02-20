@@ -6,19 +6,21 @@ public class pArquero {
 
     private String nombre;
     private int puntosVida = 100;
-    private int flechas;
+    private int municion;
+
+    private Object[] status;
 
     private eArmadura armaduraEquipada;
     private eArma armaEquipada;
 
-    public pArquero(String nombre, int puntosVida, int flechas){
+    public pArquero(String nombre, int puntosVida, int municion){
 
         comptadorArqueros++;
         this.idArquero = comptadorArqueros;
 
         this.nombre = nombre;
         this.puntosVida = puntosVida;
-        this.flechas = flechas;
+        this.municion = municion;
 
     }
 
@@ -33,6 +35,7 @@ public class pArquero {
     public eArma getArmaEquipada() {
         return armaEquipada;
     }
+
     // Dentro de cada clase
     public void equiparArma(eArma arma) {
         if (arma != null) {
