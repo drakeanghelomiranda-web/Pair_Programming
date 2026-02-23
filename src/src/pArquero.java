@@ -54,6 +54,17 @@ public class pArquero {
         }
     }
 
+    public void setStatus(tipoDaño status, int turnos){
+        if (status == tipoDaño.fisico){
+            this.status[0] = "none";
+            this.status[1] = 0;
+            return;
+        }
+        this.status[0] = status;
+        this.status[1] = turnos;
+    }
+    public Object getStatus(){ return this.status[0]; }
+
     public int getHP(){ return puntosVida; }
     public void setHP(int newHP){ this.puntosVida = newHP; }
 
@@ -73,6 +84,9 @@ public class pArquero {
         int daño = (int)((this.armaEquipada.damage() + fuerza) * reduccion);
         System.out.println(this.nombre + " ha causado " + daño + " daño " + this.armaEquipada.getTipoDaño() + " a " + oponente.getNombre());
         oponente.setHP(oponente.getHP() - daño);
+        if (this.armaEquipada.getTipoDaño() != tipoDaño.fisico && oponente.getStatus() != "none"){ //Añade un status si el arma atacante tiene y el oponente no tiene ningún status
+            oponente.setStatus(this.armaEquipada.getTipoDaño(), 3);
+        }
         System.out.println("A " + oponente.getNombre() + " le quedan " + oponente.getHP() + " HP!");
     }
 
@@ -92,6 +106,9 @@ public class pArquero {
         int daño = (int)((this.armaEquipada.damage() + fuerza) * reduccion);
         System.out.println(this.nombre + " ha causado " + daño + " daño " + this.armaEquipada.getTipoDaño() + " a " + oponente.getNombre());
         oponente.setHP(oponente.getHP() - daño);
+        if (this.armaEquipada.getTipoDaño() != tipoDaño.fisico && oponente.getStatus() != "none"){ //Añade un status si el arma atacante tiene y el oponente no tiene ningún status
+            oponente.setStatus(this.armaEquipada.getTipoDaño(), 3);
+        }
         System.out.println("A " + oponente.getNombre() + " le quedan " + oponente.getHP() + " HP!");
     }
 
@@ -111,6 +128,9 @@ public class pArquero {
         int daño = (int)((this.armaEquipada.damage() + fuerza) * reduccion);
         System.out.println(this.nombre + " ha causado " + daño + " daño " + this.armaEquipada.getTipoDaño() + " a " + oponente.getNombre());
         oponente.setHP(oponente.getHP() - daño);
+        if (this.armaEquipada.getTipoDaño() != tipoDaño.fisico && oponente.getStatus() != "none"){ //Añade un status si el arma atacante tiene y el oponente no tiene ningún status
+            oponente.setStatus(this.armaEquipada.getTipoDaño(), 3);
+        }
         System.out.println("A " + oponente.getNombre() + " le quedan " + oponente.getHP() + " HP!");
     }
 }
