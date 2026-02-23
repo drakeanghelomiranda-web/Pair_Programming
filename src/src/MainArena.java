@@ -15,7 +15,7 @@ void main(){
         eArma aA2 = new eArma("Pistola", 15, tipoDaño.FUEGO);
         eArma aA3 = new eArma("Cerbatana", 11, tipoDaño.VENENO);
         eArma aA4 = new eArma("Lanzabolas de nieve", 17, tipoDaño.HIELO);
-    // Armadura1. //
+    // Armadura //
         eArmadura eAD1 = new eArmadura("Armadura de Cuero", 10);
         eArmadura eAD2 = new eArmadura("Armadura de Cobre", 20);
         eArmadura eAD3 = new eArmadura("Armadura de Hierro", 35);
