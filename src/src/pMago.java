@@ -21,11 +21,13 @@ public class pMago {
         this.nombre = nombre;
         this.puntosVida = puntosVida;
         this.mana = mana;
-
     }
 
     public int getIdMago() {
         return idMago;
+    }
+    public String getNombre() {
+        return nombre;
     }
 
     public eArmadura getArmaduraEquipada() {
@@ -52,5 +54,7 @@ public class pMago {
             System.out.println(nombre + " no puede equipar una armadura nula.");
         }
     }
+
+    public int getHP(){ return puntosVida; }
+    public void setHP(int newHP){ this.puntosVida = newHP; }
 }
-//

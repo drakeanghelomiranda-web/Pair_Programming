@@ -1,26 +1,40 @@
 void main(){
 
     // Armas //
-        eArma aG1 = new eArma("Espada", 25, tipoDaño.FISICO);
-        eArma aG2 = new eArma("Maza", 17, tipoDaño.FUEGO);
-        eArma aG3 = new eArma("Lanza", 13, tipoDaño.VENENO);
-        eArma aG4 = new eArma("Hacha", 20, tipoDaño.HIELO);
+        // Guerrero //
+        eArma aG1 = new eArma("Espada", 20, tipoDaño.fisico);
+        eArma aG2 = new eArma("Maza", 14, tipoDaño.igneo);
+        eArma aG3 = new eArma("Lanza", 10, tipoDaño.venenoso);
+        eArma aG4 = new eArma("Hacha", 17, tipoDaño.cryogenico);
 
-        eArma aM1 = new eArma("Pocion de daño", 30, tipoDaño.FISICO);
-        eArma aM2 = new eArma("Bola de fuego", 20, tipoDaño.FUEGO);
-        eArma aM3 = new eArma("Humo venenoso", 15, tipoDaño.VENENO);
-        eArma aM4 = new eArma("Varita helada", 24, tipoDaño.HIELO);
+        // Mago //
+        eArma aM1 = new eArma("Pocion de daño", 30, tipoDaño.fisico);
+        eArma aM2 = new eArma("Bola de fuego", 20, tipoDaño.igneo);
+        eArma aM3 = new eArma("Humo venenoso", 15, tipoDaño.venenoso);
+        eArma aM4 = new eArma("Varita helada", 24, tipoDaño.cryogenico);
 
-        eArma aA1 = new eArma("Arco", 20, tipoDaño.FISICO);
-        eArma aA2 = new eArma("Pistola", 15, tipoDaño.FUEGO);
-        eArma aA3 = new eArma("Cerbatana", 11, tipoDaño.VENENO);
-        eArma aA4 = new eArma("Lanzabolas de nieve", 17, tipoDaño.HIELO);
-    // Armadura ba //
-        eArmadura eAD1 = new eArmadura("Armadura de Cuero", 10);
-        eArmadura eAD2 = new eArmadura("Armadura de Cobre", 20);
-        eArmadura eAD3 = new eArmadura("Armadura de Hierro", 35);
-        eArmadura eAD4 = new eArmadura("Armadura de Oro", 25);
-        eArmadura eAD5 = new eArmadura("Armadura de Diamante", 50);
+        // Arquero //
+        eArma aA1 = new eArma("Arco", 25, tipoDaño.fisico);
+        eArma aA2 = new eArma("Pistola", 17, tipoDaño.igneo);
+        eArma aA3 = new eArma("Cerbatana", 13, tipoDaño.venenoso);
+        eArma aA4 = new eArma("Lanzabolas de nieve", 20, tipoDaño.cryogenico);
+
+    // Armadura //
+        // Guerrero //
+        eArmadura cG1 = new eArmadura("Armadura fundida", 15);
+        eArmadura cG2 = new eArmadura("Armadura sagrada", 30);
+        eArmadura cG3 = new eArmadura("Armadura de escarabajo", 45);
+
+        // Mago //
+        eArmadura cM1 = new eArmadura("Armadura de meteorito", 10);
+        eArmadura cM2 = new eArmadura("Armadura tabú", 20);
+        eArmadura cM3 = new eArmadura("Armadura espectral", 30);
+
+        // Arquero //
+        eArmadura cA1 = new eArmadura("Armadura necrótica", 25);
+        eArmadura cA2 = new eArmadura("Armadura cryogenica", 32);
+        eArmadura cA3 = new eArmadura("Armadura de shroomita", 40);
+
     // GUERRERO
         pGuerrero pG1 = new pGuerrero("Guillem Alfonso XVII", 100, 140);
         pGuerrero pG2 = new pGuerrero("Javier de Moncloa Santos", 150, 100);
@@ -36,4 +50,3 @@ void main(){
         pArquero pa2 = new pArquero("Robin Hood", 100, 20);
         pArquero pa3 = new pArquero("Katniss Everdeen", 110, 25);
 }
-//

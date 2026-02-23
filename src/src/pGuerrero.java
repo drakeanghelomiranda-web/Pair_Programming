@@ -28,6 +28,9 @@ public class pGuerrero {
     public int getIdGuerrero() {
         return idGuerrero;
     }
+    public String getNombre() {
+        return nombre;
+    }
 
     public eArmadura getArmaduraEquipada() {
         return armaduraEquipada;
@@ -36,8 +39,7 @@ public class pGuerrero {
     public eArma getArmaEquipada() {
         return armaEquipada;
     }
-
-    // Dentro de cada clase
+    
     public void equiparArma(eArma arma) {
         if (arma != null) {
             this.armaEquipada = arma;
@@ -54,12 +56,73 @@ public class pGuerrero {
         }
     }
 
-    public void atacar(pGuerrero oponente){
+    public void setStatus(tipoDaño status, int turnos){
+        if (status == tipoDaño.fisico){
+            this.status[0] = "none";
+            this.status[1] = 0;
+            return;
+        }
+        this.status[0] = status;
+        this.status[1] = turnos;
+    }
+
+    public int getHP(){ return puntosVida; }
+    public void setHP(int newHP){ this.puntosVida = newHP; }
+
+    public void atacar(pArquero oponente){
+        if (this.armaEquipada == null){
+            System.out.println(this.nombre + " no tiene arma, así que no puede atacar");
+            return;
+        }
         int fuerza = (int)(Math.random() * 6);
         if (fuerza == 6){ //Daño critico
             fuerza = 10;
         }
-        int danyo = this.armaEquipada.damage() + fuerza;
+        double reduccion = 1;
+        if (oponente.getArmaduraEquipada() != null){
+            reduccion = 1 - (oponente.getArmaduraEquipada().getDefensa() * 0.1);
+        }
+        int daño = (int)((this.armaEquipada.damage() + fuerza) * reduccion);
+        System.out.println(this.nombre + " ha causado " + daño + " daño " + this.armaEquipada.getTipoDaño() + " a " + oponente.getNombre());
+        oponente.setHP(oponente.getHP() - daño);
+        System.out.println("A " + oponente.getNombre() + " le quedan " + oponente.getHP() + " HP!");
+    }
+
+    public void atacar(pMago oponente){
+        if (this.armaEquipada == null){
+            System.out.println(this.nombre + " no tiene arma, así que no puede atacar");
+            return;
+        }
+        int fuerza = (int)(Math.random() * 6);
+        if (fuerza == 6){ //Daño critico
+            fuerza = 10;
+        }
+        double reduccion = 1;
+        if (oponente.getArmaduraEquipada() != null){
+            reduccion = 1 - (oponente.getArmaduraEquipada().getDefensa() * 0.1);
+        }
+        int daño = (int)((this.armaEquipada.damage() + fuerza) * reduccion);
+        System.out.println(this.nombre + " ha causado " + daño + " daño " + this.armaEquipada.getTipoDaño() + " a " + oponente.getNombre());
+        oponente.setHP(oponente.getHP() - daño);
+        System.out.println("A " + oponente.getNombre() + " le quedan " + oponente.getHP() + " HP!");
+    }
+
+    public void atacar(pGuerrero oponente){
+        if (this.armaEquipada == null){
+            System.out.println(this.nombre + " no tiene arma, así que no puede atacar");
+            return;
+        }
+        int fuerza = (int)(Math.random() * 6);
+        if (fuerza == 6){ //Daño critico
+            fuerza = 10;
+        }
+        double reduccion = 1;
+        if (oponente.getArmaduraEquipada() != null){
+            reduccion = 1 - (oponente.getArmaduraEquipada().getDefensa() * 0.1);
+        }
+        int daño = (int)((this.armaEquipada.damage() + fuerza) * reduccion);
+        System.out.println(this.nombre + " ha causado " + daño + " daño " + this.armaEquipada.getTipoDaño() + " a " + oponente.getNombre());
+        oponente.setHP(oponente.getHP() - daño);
+        System.out.println("A " + oponente.getNombre() + " le quedan " + oponente.getHP() + " HP!");
     }
 }
-//

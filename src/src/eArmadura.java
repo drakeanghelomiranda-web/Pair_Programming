@@ -9,5 +9,8 @@ public class eArmadura {
     public String getNombreArmadura() {
         return nombreArmadura;
     }
+    public int getDefensa() {
+        return defensa;
+    }
 }
 //
