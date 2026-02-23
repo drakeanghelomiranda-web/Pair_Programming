@@ -9,5 +9,5 @@ public class eArmadura {
     public String getNombreArmadura() {
         return nombreArmadura;
     }
-
 }
+//

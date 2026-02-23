@@ -36,3 +36,4 @@ void main(){
         pArquero pa2 = new pArquero("Robin Hood", 100, 20);
         pArquero pa3 = new pArquero("Katniss Everdeen", 110, 25);
 }
+//

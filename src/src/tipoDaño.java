@@ -7,3 +7,4 @@ public enum tipoDaño {
 //HIELO: Reducir daño o defensa
 //VENENO: Daño por % de vida actual (no maxima)
 //FISICO: Más propenso a ignorar defensa o probabilidad de aturdir
+//
