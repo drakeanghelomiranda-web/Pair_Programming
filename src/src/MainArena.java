@@ -35,7 +35,7 @@ void main(){
         eArmadura cA2 = new eArmadura("Armadura cryogenica", 32);
         eArmadura cA3 = new eArmadura("Armadura de shroomita", 40);
 
-    // GUERRERO
+    // Guerreros
         pGuerrero pG1 = new pGuerrero("Guillem Alfonso XVII", 100, 140);
         pGuerrero pG2 = new pGuerrero("Javier de Moncloa Santos", 150, 100);
         pGuerrero pG3 = new pGuerrero("Bob", 120, 120);
@@ -50,3 +50,23 @@ void main(){
         pArquero pa2 = new pArquero("Robin Hood", 100, 20);
         pArquero pa3 = new pArquero("Katniss Everdeen", 110, 25);
 }
+
+//Antes de empezar:
+//      -Se asigna 3 personajes aleatorios a cada gremio
+//      -Cada personaje tiene una armadura y arma aleatoria de su clase
+//      -Justo antes de empezar combate se muestra cada personaje y su equipamiento
+//
+//Logica de combate:
+//Al principio de turno, comprueba los status de cada personaje:
+//      -Si el personaje tiene un status, pasa algo, y los turnos del status se reducen
+//      -Si el status tiene 0 turnos, se pone el status como fisico con 0 turnos (estado default)
+//En la fase de ataque, va personaje por personaje comprobando que:
+//      -Esta vivo (vida > 0), por lo tanto ataca
+//      -Si no esta vivo, se pasa su turno
+//      -[IMPORTANTE] los perosonajes vivos no deberían de poder atacar a personajes muertos
+//Al acabar la fase de combate, muestra la salud y energia de cada personaje
+//Si el personaje está muerto simplemente muestra "muerto"
+//Se debería añadir un scanner.nextLine al final del bucle para que el usuario pueda ir leyendo cada fase de combate comodamente
+//La unica funcion del scanner es que el codigo se "detenga" y el usuario pueda leer
+
+//Al acabar la batalla, se debe mostrar el gremio ganador y los supervivientes
